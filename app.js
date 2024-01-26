@@ -86,9 +86,9 @@ const deleteAllTodos = async () => {
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach(async (doc) => {
     await deleteDoc(doc.ref);
+    displayTodo.style.display = "none";
   });
   alert("All Todos Deleted !");
-  displayTodo.style.display = "none";
 };
 
 addButton.addEventListener("click", uploadingDataInFireStore);
